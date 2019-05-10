@@ -18,4 +18,4 @@ class RingBuffer:
       self.len += 1
 
   def get(self):
-    return list(filter(lambda e: e is not None, self.storage))
+    return self.storage[:self.len]
