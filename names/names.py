@@ -18,15 +18,28 @@ duplicates = []
 
 names = names_1 + names_2
 
-# this solution does NOT repeat names
-# like the first does
+# MVP SOLUTION
+# This solution does NOT repeat names
+# like the first does.
 # O(n)
-unique = set()
-for name in names:
-    if name in unique:
-        duplicates.append(name)
-    else:
-        unique.add(name)
+# unique = set()
+# for name in names:
+#     if name in unique:
+#         duplicates.append(name)
+#     else:
+#         unique.add(name)
+
+# STRETCH
+# This solution has potential for repeated names
+# depending on the input files.
+# Since the data doesn't seem to have repeated names,
+# there are no repeated names in this case, though.
+# O(n*log(n))
+names.sort()
+for i in range(len(names)-1):
+    if names[i] == names[i+1]:
+        duplicates.append(names[i])
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
