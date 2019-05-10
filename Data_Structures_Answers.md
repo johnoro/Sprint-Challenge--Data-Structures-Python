@@ -15,7 +15,8 @@ linear, O(k)
 
 4. What is the space complexity of your ring buffer's `get` method?
 
-linear, O(n)
+Based on the size of the new list, `k`:
+linear, O(k)
 
 5. What is the runtime complexity of the provided code in `names.py`?
 
